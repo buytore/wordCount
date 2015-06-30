@@ -26,7 +26,6 @@ conn = engine.connect()
 srp = "SELECT investigation_notes FROM sms_words_June8 WHERE risk='High Risk'"
 
 results = engine.execute(srp)
-#        entries = [dict(category=row[0], total=row[1], high=row[4], medium=row[3]) for row in results]
 #entries = [dict(category=row[0], SRP=(row[4]*64+row[3]*32+row[2]*4), high=row[4], medium=row[3], low=row[2]) for row in results]
 #sorted_entries = sorted(entries, key = lambda srp: srp['SRP'], reverse=True)
 

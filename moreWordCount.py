@@ -1,6 +1,4 @@
 from stop_words import stops
-import re
-import nltk
 from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, create_engine, select
 import operator
 from collections import Counter

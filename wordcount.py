@@ -1,6 +1,5 @@
 __author__ = 'markbannan'
-from stop_words import stops
-from collections import Counter
+
 from bs4 import BeautifulSoup
 import operator
 import re
@@ -15,9 +14,7 @@ conn = engine.connect()
 
 srp = "SELECT text_word, counts FROM sms_word_totals_copy WHERE 1"
 results = engine.execute(srp)
-#entries = [dict(investigation_notes=row[0]) for row in results]
 
-#for value in entries:
 for value in results:
     new_str += value[0] + ' '.encode('utf_8')
 tokens = nltk.word_tokenize(new_str)
@@ -37,7 +34,7 @@ list_str_start = '[{"text":"'
 list_str_end = "]"
 end_record = "}"
 
-for result in new_results[:25]:
+for result in results[:25]:
     word_tag_str += result[0] + size_part + str(result[1])
     first_time+=1
 
